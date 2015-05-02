@@ -28,10 +28,11 @@
     [super viewDidLoad];
 
     self.improvedButton = [[JWKButton alloc] init];
-//    self.improvedButton.backgroundColor = [UIColor redColor];
+    self.improvedButton.backgroundColor = [UIColor redColor];
     self.improvedButton.titleLabel.numberOfLines = 0;
     self.improvedButton.titleLabel.preferredMaxLayoutWidth = 40;
-//    self.improvedButton.titleLabel.text = [self buttonTitle];
+
+    [self.improvedButton setTitle: [self buttonTitle]forState:UIControlStateNormal];
     self.improvedButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.improvedButton addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.improvedButton];
@@ -42,6 +43,7 @@
     self.standardButton.titleLabel.preferredMaxLayoutWidth = 40;
     [self.standardButton setTitle:[self buttonTitle] forState:UIControlStateNormal];
     self.standardButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.standardButton addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.standardButton];
 
     NSDictionary * viewsDictionary = NSDictionaryOfVariableBindings(_improvedButton, _standardButton);
@@ -71,13 +73,11 @@
 {
     [super viewDidAppear:animated];
     
-    [self.improvedButton setTitle:@"Normal" forState:UIControlStateNormal];
-    [self.improvedButton setBackgroundColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.improvedButton setTitle:@"selected" forState:UIControlStateSelected];
-    [self.improvedButton setBackgroundColor:[UIColor blueColor] forState:UIControlStateSelected];
-    //[self.improvedButton setTitle:@"highlighted" forState:UIControlStateHighlighted];
-    [self.improvedButton setBackgroundColor:[UIColor brownColor] forState:UIControlStateHighlighted];
-    //[self.improvedButton setTitle:@"sel & high" forState:UIControlStateSelected | UIControlStateHighlighted];
+    [self.improvedButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+    [self.improvedButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+
+    [self.standardButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+    [self.standardButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
 }
 
 #pragma mark - Actions
