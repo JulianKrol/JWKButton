@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B04117637B4F19D7CB651A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B04135EF48AA30251287F56 /* AppDelegate.m */; };
+		6B041518C8A16210715C8E73 /* JWKButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B041338E7F3957EDD2318D9 /* JWKButtonTests.m */; };
+		6B04155FF85ADC75C0E95C2B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B041672E79E1C36CF33F15A /* ViewController.m */; };
+		6B041ABC9D98415792CF286D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0415DCC0C94BA2AF3AC5D6 /* LaunchScreen.xib */; };
+		6B041C801866FE945CD91EB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B041CB7229A2C9F673F243A /* Images.xcassets */; };
+		6B041CC8E73DB63B3220036B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B04156794F6FA843BEC7266 /* Main.storyboard */; };
+		6B041E7BA54A1DDA129CB25E /* JWKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0411F3E81F3DA147A366C8 /* JWKButton.m */; };
+		6B041ECDB00CF4647B8E4AD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B041BC7E5D3F966E1B2CC77 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6B041943EF0A9C1540157A25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6B041A3AA27D34DD4BBFE629 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B041A53246F60228D1F3487;
+			remoteInfo = JWKButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6B04116BBE7A805D16A3786D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		6B0411F3E81F3DA147A366C8 /* JWKButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWKButton.m; sourceTree = "<group>"; };
+		6B041338E7F3957EDD2318D9 /* JWKButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWKButtonTests.m; sourceTree = "<group>"; };
+		6B04135EF48AA30251287F56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6B0413C299FEDA841023BEA9 /* JWKButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JWKButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B0415BBA5304CD7F5AA4341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		6B041672E79E1C36CF33F15A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6B04175B50DD2EC13BCF86D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6B0417ABD799869C2662E7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6B041953AAB82E26BB5EED63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6B0419596A4CA3AF2BAD9233 /* JWKButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JWKButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B041B6A30BCC4FF75DA600E /* JWKButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWKButton.h; sourceTree = "<group>"; };
+		6B041BC7E5D3F966E1B2CC77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6B041CB7229A2C9F673F243A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6B041FCDC674BA0D602C621E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B0410A22A7FA7E0D1209AE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B0418A38B58B384A78DD314 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B0410B161AFB3F2AA3A9250 /* JWKButtonTests */ = {
+			isa = PBXGroup;
+			children = (
+				6B0412D635F85A28BA1DD400 /* Supporting Files */,
+				6B041338E7F3957EDD2318D9 /* JWKButtonTests.m */,
+			);
+			path = JWKButtonTests;
+			sourceTree = "<group>";
+		};
+		6B04121F6A1E5949BAF5F448 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				6B041B6A30BCC4FF75DA600E /* JWKButton.h */,
+				6B0411F3E81F3DA147A366C8 /* JWKButton.m */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		6B04124D178CA7906E31E8FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B0419596A4CA3AF2BAD9233 /* JWKButton.app */,
+				6B0413C299FEDA841023BEA9 /* JWKButtonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B04125BB46F2492A0DE2DB0 /* JWKButton */ = {
+			isa = PBXGroup;
+			children = (
+				6B041D1F70CB1BFB7EE0C92C /* Supporting Files */,
+				6B041CB7229A2C9F673F243A /* Images.xcassets */,
+				6B0415DCC0C94BA2AF3AC5D6 /* LaunchScreen.xib */,
+				6B04175B50DD2EC13BCF86D0 /* AppDelegate.h */,
+				6B04135EF48AA30251287F56 /* AppDelegate.m */,
+				6B04156794F6FA843BEC7266 /* Main.storyboard */,
+				6B041FCDC674BA0D602C621E /* ViewController.h */,
+				6B041672E79E1C36CF33F15A /* ViewController.m */,
+				6B04121F6A1E5949BAF5F448 /* UIComponents */,
+			);
+			path = JWKButton;
+			sourceTree = "<group>";
+		};
+		6B0412D635F85A28BA1DD400 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B04116BBE7A805D16A3786D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6B0413AACD1D3829500CBD6A = {
+			isa = PBXGroup;
+			children = (
+				6B04124D178CA7906E31E8FC /* Products */,
+				6B04125BB46F2492A0DE2DB0 /* JWKButton */,
+				6B0410B161AFB3F2AA3A9250 /* JWKButtonTests */,
+			);
+			sourceTree = "<group>";
+		};
+		6B041D1F70CB1BFB7EE0C92C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B0415BBA5304CD7F5AA4341 /* Info.plist */,
+				6B041BC7E5D3F966E1B2CC77 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B0410F02D483122AC627203 /* JWKButtonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B041C25C7546236D1ACB7EF /* Build configuration list for PBXNativeTarget "JWKButtonTests" */;
+			buildPhases = (
+				6B041FFF0DA2C64E641E22A4 /* Sources */,
+				6B0418A38B58B384A78DD314 /* Frameworks */,
+				6B0417DA5DA481F8BC955F42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B041FDE10BD20DA8E6EBED4 /* PBXTargetDependency */,
+			);
+			name = JWKButtonTests;
+			productName = JWKButtonTests;
+			productReference = 6B0413C299FEDA841023BEA9 /* JWKButtonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6B041A53246F60228D1F3487 /* JWKButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B04117C77C73613DCF0FF9F /* Build configuration list for PBXNativeTarget "JWKButton" */;
+			buildPhases = (
+				6B041412DAC39FBFF6D7E4BF /* Sources */,
+				6B0410A22A7FA7E0D1209AE2 /* Frameworks */,
+				6B041215A0D11CE84E3C8F35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JWKButton;
+			productName = JWKButton;
+			productReference = 6B0419596A4CA3AF2BAD9233 /* JWKButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B041A3AA27D34DD4BBFE629 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Julian Król";
+			};
+			buildConfigurationList = 6B0410E0EB947B37414CC87C /* Build configuration list for PBXProject "JWKButton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6B0413AACD1D3829500CBD6A;
+			productRefGroup = 6B04124D178CA7906E31E8FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B041A53246F60228D1F3487 /* JWKButton */,
+				6B0410F02D483122AC627203 /* JWKButtonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B041215A0D11CE84E3C8F35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B041C801866FE945CD91EB0 /* Images.xcassets in Resources */,
+				6B041ABC9D98415792CF286D /* LaunchScreen.xib in Resources */,
+				6B041CC8E73DB63B3220036B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B0417DA5DA481F8BC955F42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B041412DAC39FBFF6D7E4BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B041ECDB00CF4647B8E4AD4 /* main.m in Sources */,
+				6B04117637B4F19D7CB651A6 /* AppDelegate.m in Sources */,
+				6B04155FF85ADC75C0E95C2B /* ViewController.m in Sources */,
+				6B041E7BA54A1DDA129CB25E /* JWKButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B041FFF0DA2C64E641E22A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B041518C8A16210715C8E73 /* JWKButtonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6B041FDE10BD20DA8E6EBED4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B041A53246F60228D1F3487 /* JWKButton */;
+			targetProxy = 6B041943EF0A9C1540157A25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6B04156794F6FA843BEC7266 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B041953AAB82E26BB5EED63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6B0415DCC0C94BA2AF3AC5D6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B0417ABD799869C2662E7A2 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6B041002DEDCFD29FFAAE156 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JWKButton.app/JWKButton";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JWKButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		6B041618B617664D27FF75A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JWKButton.app/JWKButton";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JWKButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		6B0418BC49F8C687BBB21B64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6B041D8E6C0F234F7D95CE54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B041F6082E19CFAAEA99666 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JWKButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6B041F8755342F974B264AF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JWKButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B0410E0EB947B37414CC87C /* Build configuration list for PBXProject "JWKButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B0418BC49F8C687BBB21B64 /* Debug */,
+				6B041D8E6C0F234F7D95CE54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B04117C77C73613DCF0FF9F /* Build configuration list for PBXNativeTarget "JWKButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B041F8755342F974B264AF1 /* Debug */,
+				6B041F6082E19CFAAEA99666 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6B041C25C7546236D1ACB7EF /* Build configuration list for PBXNativeTarget "JWKButtonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B041002DEDCFD29FFAAE156 /* Debug */,
+				6B041618B617664D27FF75A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6B041A3AA27D34DD4BBFE629 /* Project object */;
+}
