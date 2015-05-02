@@ -154,7 +154,7 @@ static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
 
 - (NSMutableDictionary *)configurationForState:(UIControlState)state
 {
-    NSString * configurationDictionaryKey = [NSString stringWithFormat:@"%d", state];
+    NSString * configurationDictionaryKey = [NSString stringWithFormat:@"%@", @(state)];
     NSMutableDictionary * configurationDictionary = self.configurationsDictionary[configurationDictionaryKey];
     if (!configurationDictionary) {
         configurationDictionary = [[NSMutableDictionary alloc] init];
@@ -165,7 +165,7 @@ static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
 
 - (NSString *)stateStringKeyForState:(UIControlState)state
 {
-    return [NSString stringWithFormat:@"%d", state];
+    return [NSString stringWithFormat:@"%@", @(state)];
 }
 
 @end
