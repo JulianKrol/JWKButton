@@ -73,7 +73,7 @@
     
     [self.improvedButton setTitle:@"Normal" forState:UIControlStateNormal];
     [self.improvedButton setBackgroundColor:[UIColor blackColor] forState:UIControlStateNormal];
-   // [self.improvedButton setTitle:@"selected" forState:UIControlStateSelected];
+    [self.improvedButton setTitle:@"selected" forState:UIControlStateSelected];
     [self.improvedButton setBackgroundColor:[UIColor blueColor] forState:UIControlStateSelected];
     //[self.improvedButton setTitle:@"highlighted" forState:UIControlStateHighlighted];
     [self.improvedButton setBackgroundColor:[UIColor brownColor] forState:UIControlStateHighlighted];
