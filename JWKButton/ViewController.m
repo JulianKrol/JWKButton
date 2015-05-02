@@ -13,6 +13,9 @@
 
 @interface ViewController ()
 
+@property(strong, nonatomic) JWKButton * improvedButton;
+@property(strong, nonatomic) UIButton * standardButton;
+
 @end
 
 @implementation ViewController
@@ -24,43 +27,63 @@
 {
     [super viewDidLoad];
 
-    JWKButton * improvedButton = [[JWKButton alloc] init];
-    improvedButton.backgroundColor = [UIColor redColor];
-    improvedButton.titleLabel.numberOfLines = 0;
-    improvedButton.titleLabel.preferredMaxLayoutWidth = 40;
-    improvedButton.titleLabel.text = [self buttonTitle];
-    improvedButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:improvedButton];
+    self.improvedButton = [[JWKButton alloc] init];
+    self.improvedButton.backgroundColor = [UIColor redColor];
+    self.improvedButton.titleLabel.numberOfLines = 0;
+    self.improvedButton.titleLabel.preferredMaxLayoutWidth = 40;
+    [self.improvedButton setTitle: [self buttonTitle]forState:UIControlStateNormal];
+    self.improvedButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.improvedButton addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.improvedButton];
 
-    UIButton * standardButton = [[UIButton alloc] init];
-    standardButton.backgroundColor = [UIColor redColor];
-    standardButton.titleLabel.numberOfLines = 0;
-    standardButton.titleLabel.preferredMaxLayoutWidth = 40;
-    [standardButton setTitle:[self buttonTitle] forState:UIControlStateNormal];
-    standardButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:standardButton];
+    self.standardButton = [[UIButton alloc] init];
+    self.standardButton.backgroundColor = [UIColor redColor];
+    self.standardButton.titleLabel.numberOfLines = 0;
+    self.standardButton.titleLabel.preferredMaxLayoutWidth = 40;
+    [self.standardButton setTitle:[self buttonTitle] forState:UIControlStateNormal];
+    self.standardButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.standardButton addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.standardButton];
 
-    NSDictionary * viewsDictionary = NSDictionaryOfVariableBindings(improvedButton, standardButton);
+    NSDictionary * viewsDictionary = NSDictionaryOfVariableBindings(_improvedButton, _standardButton);
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_improvedButton]"
+                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                      metrics:nil
+                                                                        views:viewsDictionary]];
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_improvedButton]"
+                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                      metrics:nil
+                                                                        views:viewsDictionary]];
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[_standardButton]-20-|"
+                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                      metrics:nil
+                                                                        views:viewsDictionary]];
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_standardButton]-20-|"
+                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                      metrics:nil
+                                                                        views:viewsDictionary]];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[improvedButton]"
-                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
-                                                                      metrics:nil
-                                                                        views:viewsDictionary]];
+    [self.improvedButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+    [self.improvedButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[improvedButton]"
-                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
-                                                                      metrics:nil
-                                                                        views:viewsDictionary]];
+    [self.standardButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+    [self.standardButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+}
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[standardButton]-20-|"
-                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
-                                                                      metrics:nil
-                                                                        views:viewsDictionary]];
+#pragma mark - Actions
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[standardButton]-20-|"
-                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
-                                                                      metrics:nil
-                                                                        views:viewsDictionary]];
+- (void)tapped:(UIControl *)tapped
+{
+    tapped.selected = YES;
 }
 
 #pragma mark - Private Instance Methods
