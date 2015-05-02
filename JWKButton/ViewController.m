@@ -71,8 +71,11 @@
 {
     [super viewDidAppear:animated];
     [self.improvedButton setTitle:@"Normal" forState:UIControlStateNormal];
+    [self.improvedButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.improvedButton setTitle:@"selected" forState:UIControlStateSelected];
+    [self.improvedButton setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
     [self.improvedButton setTitle:@"highlighted" forState:UIControlStateHighlighted];
+    [self.improvedButton setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
     [self.improvedButton setTitle:@"sel & high" forState:UIControlStateSelected | UIControlStateHighlighted];
 }
 
