@@ -31,7 +31,6 @@
     self.improvedButton.backgroundColor = [UIColor redColor];
     self.improvedButton.titleLabel.numberOfLines = 0;
     self.improvedButton.titleLabel.preferredMaxLayoutWidth = 40;
-
     [self.improvedButton setTitle: [self buttonTitle]forState:UIControlStateNormal];
     self.improvedButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.improvedButton addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
