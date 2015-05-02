@@ -130,7 +130,7 @@ static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
     } else {
         NSString * normalStateKey = [self stateStringKeyForState:UIControlStateNormal];
         NSMutableDictionary * normalDictionary = self.configurationsDictionary[normalStateKey];
-        self.titleLabel.text = normalDictionary[titleKey] ? : @"";
+        self.titleLabel.text = normalDictionary[titleKey] ? : (self.titleLabel.text ? : @"");
     }
 
     UIColor * titleColor = configurationDictionary[titleColorKey];
@@ -139,7 +139,7 @@ static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
     } else {
         NSString * normalStateKey = [self stateStringKeyForState:UIControlStateNormal];
         NSMutableDictionary * normalDictionary = self.configurationsDictionary[normalStateKey];
-        self.titleLabel.textColor = normalDictionary[titleColorKey] ? : [UIColor whiteColor];
+        self.titleLabel.textColor = normalDictionary[titleColorKey] ? : (self.titleLabel.textColor ? : [UIColor whiteColor]);
     }
 
     UIColor * backgroundColor = configurationDictionary[backgroundColorKey];
@@ -148,7 +148,7 @@ static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
     } else {
         NSString * normalStateKey = [self stateStringKeyForState:UIControlStateNormal];
         NSMutableDictionary * normalDictionary = self.configurationsDictionary[normalStateKey];
-        self.backgroundColor = normalDictionary[backgroundColorKey] ? : [UIColor clearColor];
+        self.backgroundColor = normalDictionary[backgroundColorKey] ? : (self.backgroundColor ? : [UIColor clearColor]);
     }
 }
 
