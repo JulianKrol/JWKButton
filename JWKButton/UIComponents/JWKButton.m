@@ -39,38 +39,40 @@ static NSString * const titleColorKey = @"JWKButton.titleColorKey";
     return self;
 }
 
-#pragma mark - Public Instance Methods
-
-- (void)setTitle:(NSString *)title forState:(UIControlState)state
-{
-    NSString * configurationDictionaryKey = [NSString stringWithFormat:@"%d", state];
-    NSMutableDictionary * configurationDictionary = self.configurationsDictionary[configurationDictionaryKey];
-    if (!configurationDictionary) {
-        configurationDictionary = [[NSMutableDictionary alloc] init];
-        self.configurationsDictionary[configurationDictionaryKey] = configurationDictionary;
-    }
-    configurationDictionary[titleKey] = title;
-    [self updateUI];
-}
-
 - (void)setSelected:(BOOL)selected
 {
     [super setSelected:selected];
-    
+
     [self updateUI];
 }
 
 - (void)setHighlighted:(BOOL)highlighted
 {
     [super setHighlighted:highlighted];
-    
+
     [self updateUI];
 }
 
 - (void)setEnabled:(BOOL)enabled
 {
     [super setEnabled:enabled];
-    
+
+    [self updateUI];
+}
+
+#pragma mark - Public Instance Methods
+
+- (void)setTitle:(NSString *)title forState:(UIControlState)state
+{
+    NSMutableDictionary * configurationDictionary = [self configurationForState:state];
+    configurationDictionary[titleKey] = title;
+    [self updateUI];
+}
+
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state
+{
+    NSMutableDictionary * configurationDictionary = [self configurationForState:state];
+    configurationDictionary[titleColorKey] = color;
     [self updateUI];
 }
 
@@ -111,6 +113,17 @@ static NSString * const titleColorKey = @"JWKButton.titleColorKey";
         self.titleLabel.text = configurationDictionary[titleKey] ? : @"";
         self.titleLabel.textColor = configurationDictionary[titleColorKey] ? : [UIColor whiteColor];
     }
+}
+
+- (NSMutableDictionary *)configurationForState:(UIControlState)state
+{
+    NSString * configurationDictionaryKey = [NSString stringWithFormat:@"%d", state];
+    NSMutableDictionary * configurationDictionary = self.configurationsDictionary[configurationDictionaryKey];
+    if (!configurationDictionary) {
+        configurationDictionary = [[NSMutableDictionary alloc] init];
+        self.configurationsDictionary[configurationDictionaryKey] = configurationDictionary;
+    }
+    return configurationDictionary;
 }
 
 @end
