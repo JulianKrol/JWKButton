@@ -13,4 +13,5 @@
 
 @property(strong, nonatomic, readonly) UILabel * titleLabel;
 
+- (void)setTitle:(NSString *)title forState:(UIControlState)state;
 @end
