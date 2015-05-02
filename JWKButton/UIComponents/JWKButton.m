@@ -118,9 +118,9 @@ static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
     NSString * stateStringKey = [NSString stringWithFormat:@"%d", self.state];
     NSDictionary * configurationDictionary = self.configurationsDictionary[stateStringKey];
     if (configurationDictionary) {
-        self.titleLabel.text = configurationDictionary[titleKey] ? : @"";
-        self.titleLabel.textColor = configurationDictionary[titleColorKey] ? : [UIColor whiteColor];
-        self.backgroundColor = configurationDictionary[backgroundColorKey] ? : [UIColor clearColor];
+        self.titleLabel.text = configurationDictionary[titleKey] ? : (self.titleLabel.text ? : @"");
+        self.titleLabel.textColor = configurationDictionary[titleColorKey] ? : (self.titleLabel.textColor ? : [UIColor whiteColor]);
+        self.backgroundColor = configurationDictionary[backgroundColorKey] ? : (self.backgroundColor ? : [UIColor clearColor]);
     }
 }
 
