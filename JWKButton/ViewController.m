@@ -28,10 +28,10 @@
     [super viewDidLoad];
 
     self.improvedButton = [[JWKButton alloc] init];
-    self.improvedButton.backgroundColor = [UIColor redColor];
+//    self.improvedButton.backgroundColor = [UIColor redColor];
     self.improvedButton.titleLabel.numberOfLines = 0;
     self.improvedButton.titleLabel.preferredMaxLayoutWidth = 40;
-    self.improvedButton.titleLabel.text = [self buttonTitle];
+//    self.improvedButton.titleLabel.text = [self buttonTitle];
     self.improvedButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.improvedButton addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.improvedButton];
@@ -46,12 +46,12 @@
 
     NSDictionary * viewsDictionary = NSDictionaryOfVariableBindings(_improvedButton, _standardButton);
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_improvedButton]"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_improvedButton(40)]"
                                                                       options:NSLayoutFormatDirectionLeadingToTrailing
                                                                       metrics:nil
                                                                         views:viewsDictionary]];
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_improvedButton]"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_improvedButton(40)]"
                                                                       options:NSLayoutFormatDirectionLeadingToTrailing
                                                                       metrics:nil
                                                                         views:viewsDictionary]];
@@ -70,13 +70,14 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
     [self.improvedButton setTitle:@"Normal" forState:UIControlStateNormal];
-    [self.improvedButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.improvedButton setTitle:@"selected" forState:UIControlStateSelected];
-    [self.improvedButton setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
-    [self.improvedButton setTitle:@"highlighted" forState:UIControlStateHighlighted];
-    [self.improvedButton setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
-    [self.improvedButton setTitle:@"sel & high" forState:UIControlStateSelected | UIControlStateHighlighted];
+    [self.improvedButton setBackgroundColor:[UIColor blackColor] forState:UIControlStateNormal];
+   // [self.improvedButton setTitle:@"selected" forState:UIControlStateSelected];
+    [self.improvedButton setBackgroundColor:[UIColor blueColor] forState:UIControlStateSelected];
+    //[self.improvedButton setTitle:@"highlighted" forState:UIControlStateHighlighted];
+    [self.improvedButton setBackgroundColor:[UIColor brownColor] forState:UIControlStateHighlighted];
+    //[self.improvedButton setTitle:@"sel & high" forState:UIControlStateSelected | UIControlStateHighlighted];
 }
 
 #pragma mark - Actions
