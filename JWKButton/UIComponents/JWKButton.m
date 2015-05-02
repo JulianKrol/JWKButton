@@ -16,6 +16,7 @@
 
 static NSString * const titleKey = @"JWKButton.titleKey";
 static NSString * const titleColorKey = @"JWKButton.titleColorKey";
+static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
 
 @implementation JWKButton
 
@@ -76,6 +77,13 @@ static NSString * const titleColorKey = @"JWKButton.titleColorKey";
     [self updateUI];
 }
 
+- (void)setBackgroundColor:(UIColor *)color forState:(UIControlState)state
+{
+    NSMutableDictionary * configurationDictionary = [self configurationForState:state];
+    configurationDictionary[backgroundColorKey] = color;
+    [self updateUI];
+}
+
 #pragma mark - Private Instance Methods
 
 - (void)setup
@@ -112,6 +120,7 @@ static NSString * const titleColorKey = @"JWKButton.titleColorKey";
     if (configurationDictionary) {
         self.titleLabel.text = configurationDictionary[titleKey] ? : @"";
         self.titleLabel.textColor = configurationDictionary[titleColorKey] ? : [UIColor whiteColor];
+        self.backgroundColor = configurationDictionary[backgroundColorKey] ? : [UIColor clearColor];
     }
 }
 

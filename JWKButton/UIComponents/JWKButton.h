@@ -16,4 +16,7 @@
 - (void)setTitle:(NSString *)title forState:(UIControlState)state;
 
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state;
+
+- (void)setBackgroundColor:(UIColor *)color forState:(UIControlState)state;
+
 @end
