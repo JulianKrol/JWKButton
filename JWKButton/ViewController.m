@@ -8,6 +8,7 @@
 
 
 #import "ViewController.h"
+#import "JWKButton.h"
 
 
 @interface ViewController ()
@@ -17,15 +18,56 @@
 @implementation ViewController
 
 
-- (void)viewDidLoad {
+#pragma mark - Overridden
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    JWKButton * improvedButton = [[JWKButton alloc] init];
+    improvedButton.backgroundColor = [UIColor redColor];
+    improvedButton.titleLabel.numberOfLines = 0;
+    improvedButton.titleLabel.preferredMaxLayoutWidth = 40;
+    improvedButton.titleLabel.text = [self buttonTitle];
+    improvedButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:improvedButton];
+
+    UIButton * standardButton = [[UIButton alloc] init];
+    standardButton.backgroundColor = [UIColor redColor];
+    standardButton.titleLabel.numberOfLines = 0;
+    standardButton.titleLabel.preferredMaxLayoutWidth = 40;
+    [standardButton setTitle:[self buttonTitle] forState:UIControlStateNormal];
+    standardButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:standardButton];
+
+    NSDictionary * viewsDictionary = NSDictionaryOfVariableBindings(improvedButton, standardButton);
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[improvedButton]"
+                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                      metrics:nil
+                                                                        views:viewsDictionary]];
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[improvedButton]"
+                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                      metrics:nil
+                                                                        views:viewsDictionary]];
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[standardButton]-20-|"
+                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                      metrics:nil
+                                                                        views:viewsDictionary]];
+
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[standardButton]-20-|"
+                                                                      options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                      metrics:nil
+                                                                        views:viewsDictionary]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Private Instance Methods
 
+- (NSString *)buttonTitle
+{
+    return @"This is my long enough title";
+}
 
 @end
