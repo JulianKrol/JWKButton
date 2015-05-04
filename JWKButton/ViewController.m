@@ -74,9 +74,13 @@
     
     [self.improvedButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
     [self.improvedButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+    [self.improvedButton setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+    [self.improvedButton setImage:[UIImage imageNamed:@"2"] forState:UIControlStateHighlighted];
 
     [self.standardButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
     [self.standardButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+    [self.standardButton setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+    [self.standardButton setImage:[UIImage imageNamed:@"2"] forState:UIControlStateHighlighted];
 }
 
 #pragma mark - Actions
