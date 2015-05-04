@@ -119,16 +119,16 @@ static NSString * const imageKey = @"JWKButton.imageKey";
 - (void)setupConstraints
 {
     NSDictionary * viewsDictionary = NSDictionaryOfVariableBindings(_imageView, _titleLabel);
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|->=0-[_titleLabel]->=0-|"
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|->=0-[_titleLabel]->=0-|"
                                                                  options:NSLayoutFormatDirectionLeadingToTrailing
                                                                  metrics:nil
                                                                    views:viewsDictionary]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|->=0-[_imageView]->=0-|"
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|->=0-[_imageView]->=0-|"
                                                                  options:NSLayoutFormatDirectionLeadingToTrailing
                                                                  metrics:nil
                                                                    views:viewsDictionary]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_imageView][_titleLabel]|"
-                                                                 options:NSLayoutFormatAlignAllCenterX
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_imageView][_titleLabel]|"
+                                                                 options:NSLayoutFormatAlignAllCenterY
                                                                  metrics:nil
                                                                    views:viewsDictionary]];
 }
