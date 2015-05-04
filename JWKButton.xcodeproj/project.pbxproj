@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		6B04117637B4F19D7CB651A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B04135EF48AA30251287F56 /* AppDelegate.m */; };
+		6B0414BCEDE1B115475E8C7B /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B041928222D095FD927F248 /* 1.png */; };
 		6B041518C8A16210715C8E73 /* JWKButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B041338E7F3957EDD2318D9 /* JWKButtonTests.m */; };
 		6B04155FF85ADC75C0E95C2B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B041672E79E1C36CF33F15A /* ViewController.m */; };
 		6B041ABC9D98415792CF286D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B0415DCC0C94BA2AF3AC5D6 /* LaunchScreen.xib */; };
+		6B041BB0A930BD90C7697DE5 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B041C74591E45BA46CCDF5C /* 2.png */; };
 		6B041C801866FE945CD91EB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B041CB7229A2C9F673F243A /* Images.xcassets */; };
 		6B041CC8E73DB63B3220036B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B04156794F6FA843BEC7266 /* Main.storyboard */; };
 		6B041E7BA54A1DDA129CB25E /* JWKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B0411F3E81F3DA147A366C8 /* JWKButton.m */; };
@@ -37,10 +39,12 @@
 		6B041672E79E1C36CF33F15A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6B04175B50DD2EC13BCF86D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B0417ABD799869C2662E7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6B041928222D095FD927F248 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		6B041953AAB82E26BB5EED63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B0419596A4CA3AF2BAD9233 /* JWKButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JWKButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B041B6A30BCC4FF75DA600E /* JWKButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWKButton.h; sourceTree = "<group>"; };
 		6B041BC7E5D3F966E1B2CC77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6B041C74591E45BA46CCDF5C /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		6B041CB7229A2C9F673F243A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6B041FCDC674BA0D602C621E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +106,8 @@
 				6B041FCDC674BA0D602C621E /* ViewController.h */,
 				6B041672E79E1C36CF33F15A /* ViewController.m */,
 				6B04121F6A1E5949BAF5F448 /* UIComponents */,
+				6B041C74591E45BA46CCDF5C /* 2.png */,
+				6B041928222D095FD927F248 /* 1.png */,
 			);
 			path = JWKButton;
 			sourceTree = "<group>";
@@ -204,6 +210,8 @@
 				6B041C801866FE945CD91EB0 /* Images.xcassets in Resources */,
 				6B041ABC9D98415792CF286D /* LaunchScreen.xib in Resources */,
 				6B041CC8E73DB63B3220036B /* Main.storyboard in Resources */,
+				6B041BB0A930BD90C7697DE5 /* 2.png in Resources */,
+				6B0414BCEDE1B115475E8C7B /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
