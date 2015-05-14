@@ -31,16 +31,34 @@
     self.improvedButton.backgroundColor = [UIColor redColor];
     self.improvedButton.titleLabel.numberOfLines = 0;
 //    self.improvedButton.titleLabel.preferredMaxLayoutWidth = 40;
-    [self.improvedButton setTitle: [self buttonTitle]forState:UIControlStateNormal];
+    [self.improvedButton setTitle:[self buttonTitle] forState:UIControlStateNormal];
     self.improvedButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.improvedButton addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.improvedButton];
-
+    [self.improvedButton setupConstraintsForSubviews:^NSArray *(UILabel * titleLabel, UIImageView * imageView) {
+        NSMutableArray * constraints = [[NSMutableArray alloc] init];
+        NSDictionary * viewsDictionary = NSDictionaryOfVariableBindings(titleLabel,imageView);
+        [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[titleLabel][imageView]|"
+                                                                                 options:NSLayoutFormatAlignAllCenterX
+                                                                                 metrics:nil
+                                                                                   views:viewsDictionary]];
+        
+        [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|->=0-[titleLabel]->=0-|"
+                                                                                 options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                                 metrics:nil
+                                                                                   views:viewsDictionary]];
+        [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|->=0-[imageView]->=0-|"
+                                                                                 options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                                 metrics:nil
+                                                                                   views:viewsDictionary]];
+        
+        return constraints;
+    }];
     self.standardButton = [[UIButton alloc] init];
     self.standardButton.backgroundColor = [UIColor redColor];
     self.standardButton.titleLabel.numberOfLines = 0;
-//    self.standardButton.titleLabel.preferredMaxLayoutWidth = 40;
-    [self.standardButton setTitle:[self buttonTitle] forState:UIControlStateNormal];
+    self.standardButton.titleLabel.preferredMaxLayoutWidth = 40;
+//    [self.standardButton setTitle:[self buttonTitle] forState:UIControlStateNormal];
     self.standardButton.translatesAutoresizingMaskIntoConstraints = NO;
     [self.standardButton addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.standardButton];
@@ -71,7 +89,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
+
     [self.improvedButton setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
     [self.improvedButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
     [self.improvedButton setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];

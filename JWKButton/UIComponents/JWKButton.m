@@ -11,6 +11,7 @@
 @interface JWKButton ()
 
 @property(strong, nonatomic) NSMutableDictionary * configurationsDictionary;
+@property(copy, nonatomic) NSArray * modifiableConstraints;
 
 @end
 
@@ -92,6 +93,19 @@ static NSString * const imageKey = @"JWKButton.imageKey";
     [self updateUI];
 }
 
+- (void)setupConstraintsForSubviews:(NSArray * (^)(UILabel *, UIImageView *))createConstraints
+{
+    if (!createConstraints) {
+        return;
+    }
+    if (self.modifiableConstraints) { //to prevent iOS 7 crash
+        [self removeConstraints:self.modifiableConstraints];
+    }
+    self.modifiableConstraints = createConstraints(self.titleLabel, self.imageView);
+    [self addConstraints:self.modifiableConstraints];
+    [self layoutIfNeeded];
+}
+
 #pragma mark - Private Instance Methods
 
 - (void)setup
@@ -119,18 +133,22 @@ static NSString * const imageKey = @"JWKButton.imageKey";
 - (void)setupConstraints
 {
     NSDictionary * viewsDictionary = NSDictionaryOfVariableBindings(_imageView, _titleLabel);
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|->=0-[_titleLabel]->=0-|"
+    
+    NSMutableArray * defaultConstraints = [[NSLayoutConstraint constraintsWithVisualFormat:@"V:|->=0-[_titleLabel]->=0-|"
                                                                  options:NSLayoutFormatDirectionLeadingToTrailing
                                                                  metrics:nil
-                                                                   views:viewsDictionary]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|->=0-[_imageView]->=0-|"
-                                                                 options:NSLayoutFormatDirectionLeadingToTrailing
-                                                                 metrics:nil
-                                                                   views:viewsDictionary]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_imageView][_titleLabel]|"
+                                                                   views:viewsDictionary] mutableCopy];
+    [defaultConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|->=0-[_imageView]->=0-|"
+                                                                                    options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                                    metrics:nil
+                                                                                      views:viewsDictionary]];
+    [defaultConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_imageView][_titleLabel]|"
                                                                  options:NSLayoutFormatAlignAllCenterY
                                                                  metrics:nil
                                                                    views:viewsDictionary]];
+
+    _modifiableConstraints = [defaultConstraints copy];
+    [self addConstraints:_modifiableConstraints];
 }
 
 - (void)updateUI
