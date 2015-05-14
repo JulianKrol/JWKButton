@@ -11,12 +11,14 @@
 @interface JWKButton ()
 
 @property(strong, nonatomic) NSMutableDictionary * configurationsDictionary;
+@property(copy, nonatomic) NSArray * modifiableConstraints;
 
 @end
 
 static NSString * const titleKey = @"JWKButton.titleKey";
 static NSString * const titleColorKey = @"JWKButton.titleColorKey";
 static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
+static NSString * const imageKey = @"JWKButton.imageKey";
 
 @implementation JWKButton
 
@@ -77,6 +79,13 @@ static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
     [self updateUI];
 }
 
+- (void)setImage:(UIImage *)image forState:(UIControlState)state
+{
+    NSMutableDictionary * configurationDictionary = [self configurationForState:state];
+    configurationDictionary[imageKey] = image;
+    [self updateUI];
+}
+
 - (void)setBackgroundColor:(UIColor *)color forState:(UIControlState)state
 {
     NSMutableDictionary * configurationDictionary = [self configurationForState:state];
@@ -84,13 +93,34 @@ static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
     [self updateUI];
 }
 
+- (void)setupConstraintsForSubviews:(NSArray * (^)(UILabel *, UIImageView *))createConstraints
+{
+    if (!createConstraints) {
+        return;
+    }
+    if (self.modifiableConstraints) { //to prevent iOS 7 crash
+        [self removeConstraints:self.modifiableConstraints];
+    }
+    self.modifiableConstraints = createConstraints(self.titleLabel, self.imageView);
+    [self addConstraints:self.modifiableConstraints];
+    [self layoutIfNeeded];
+}
+
 #pragma mark - Private Instance Methods
 
 - (void)setup
 {
     _configurationsDictionary = [[NSMutableDictionary alloc] init];
+    [self setupImageView];
     [self setupTitleLabel];
     [self setupConstraints];
+}
+
+- (void)setupImageView
+{
+    _imageView = [[UIImageView alloc] init];
+    _imageView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:_imageView];
 }
 
 - (void)setupTitleLabel
@@ -102,15 +132,23 @@ static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
 
 - (void)setupConstraints
 {
-    NSDictionary * viewsDictionary = NSDictionaryOfVariableBindings(_titleLabel);
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_titleLabel]|"
+    NSDictionary * viewsDictionary = NSDictionaryOfVariableBindings(_imageView, _titleLabel);
+    
+    NSMutableArray * defaultConstraints = [[NSLayoutConstraint constraintsWithVisualFormat:@"V:|->=0-[_titleLabel]->=0-|"
                                                                  options:NSLayoutFormatDirectionLeadingToTrailing
                                                                  metrics:nil
-                                                                   views:viewsDictionary]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_titleLabel]|"
-                                                                 options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                   views:viewsDictionary] mutableCopy];
+    [defaultConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|->=0-[_imageView]->=0-|"
+                                                                                    options:NSLayoutFormatDirectionLeadingToTrailing
+                                                                                    metrics:nil
+                                                                                      views:viewsDictionary]];
+    [defaultConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_imageView][_titleLabel]|"
+                                                                 options:NSLayoutFormatAlignAllCenterY
                                                                  metrics:nil
                                                                    views:viewsDictionary]];
+
+    _modifiableConstraints = [defaultConstraints copy];
+    [self addConstraints:_modifiableConstraints];
 }
 
 - (void)updateUI
@@ -140,6 +178,16 @@ static NSString * const backgroundColorKey = @"JWKButton.backgroundColorKey";
         NSString * normalStateKey = [self stateStringKeyForState:UIControlStateNormal];
         NSMutableDictionary * normalDictionary = self.configurationsDictionary[normalStateKey];
         self.titleLabel.textColor = normalDictionary[titleColorKey] ? : (self.titleLabel.textColor ? : [UIColor whiteColor]);
+    }
+
+    UIImage * image = configurationDictionary[imageKey];
+    if (image) {
+        [self.imageView setImage:image];
+    } else {
+        NSString * normalStateKey = [self stateStringKeyForState:UIControlStateNormal];
+        NSMutableDictionary * normalDictionary = self.configurationsDictionary[normalStateKey];
+        UIImage * uiImage = normalDictionary[imageKey] ? : (self.imageView.image ? : nil);
+        [self.imageView setImage:uiImage];
     }
 
     UIColor * backgroundColor = configurationDictionary[backgroundColorKey];
